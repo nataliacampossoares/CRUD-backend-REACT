@@ -1,34 +1,45 @@
 
 
-POST http://localhost:3333/videos
+POST http://localhost:3333/usuarios
 Content-type: application/json
 
 {
-  "title": "Vídeo 01",
-  "description": "Video sobre nodejs",
-  "duration": 200
+  "nome": "João da Silva",
+  "email": "joaodasilva@gmail.com",
+  "celular": "44 91234-1234"
 }
 
 ###
 
-GET http://localhost:3333/videos
+POST http://localhost:3333/usuarios
+Content-type: application/json
+
+{
+  "nome": "Maria Freitas",
+  "email": "mariafreitas@gmail.com",
+  "celular": "44 94321-4321"
+}
 
 ###
 
-GET http://localhost:3333/videos?search=node
+GET http://localhost:3333/usuarios
 
 ###
 
-PUT http://localhost:3333/videos/b8093df3-d630-429c-acb4-36b6ee74c560
+GET http://localhost:3333/usuarios?nome=joão
+
+###
+
+PUT http://localhost:3333/usuarios/b8093df3-d630-429c-acb4-36b6ee74c560
 Content-type: application/json
 Accept-Language: pt
 
 {
-  "title": "Video novo",
-  "description": "Esse é outro vídeo novo",
-  "duration": 500
+  "nome": "João da Silva",
+  "email": "joaodasilva2@gmail.com",
+  "celular": "44 91234-1234"
 }
 
 ###
 
-DELETE http://localhost:3333/videos/b8093df3-d630-429c-acb4-36b6ee74c560
+DELETE http://localhost:3333/usuarios/b8093df3-d630-429c-acb4-36b6ee74c560
