@@ -96,7 +96,7 @@ server.listen(
   function (err, address) {
     // Em caso de erro, registra o erro e encerra o processo
     if (err) {
-      fastify.log.error(err)
+      server.log.error(err)
       process.exit(1)
     }
 
