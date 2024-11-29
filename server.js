@@ -26,6 +26,29 @@ await server.register(cors, {
 // Instancia o banco de dados PostgreSQL
 const database = new DatabasePostgres();
 
+
+
+server.get("/", () => {
+  return "seja bem vindo a API de usuários"
+})
+
+
+
+
+// Rota para listar usuários (GET)
+server.get("/usuarios", async (request, reply) => {                                    
+  // Extrai o parâmetro de busca da query da URL
+  const { nome } = request.query
+  
+  // Chama o método list do banco de dados, passando o termo de busca
+  const usuarios = await database.list(nome);
+
+  reply.send(usuarios)
+
+  
+});
+
+
 // Rota para criar um novo usuário (POST)
 server.post("/usuarios", async (request, reply) => {
   // Desestrutura os dados do corpo da requisição
@@ -42,18 +65,6 @@ server.post("/usuarios", async (request, reply) => {
   return reply.status(201).send();
 });
 
-// Rota para listar usuários (GET)
-server.get("/usuarios", async (request, reply) => {                                    
-  // Extrai o parâmetro de busca da query da URL
-  const { nome } = request.query
-  
-  // Chama o método list do banco de dados, passando o termo de busca
-  const usuarios = await database.list(nome);
-
-  reply.send(usuarios)
-
-  
-});
 
 // Rota para atualizar um vídeo existente (PUT)
 server.put("/usuarios/:id", async (request, reply) => {

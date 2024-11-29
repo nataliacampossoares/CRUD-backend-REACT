@@ -1,0 +1,45 @@
+
+
+POST https://crud-backend-react.onrender.com/usuarios
+Content-type: application/json
+
+{
+  "nome": "João da Silva",
+  "email": "joaodasilva@gmail.com",
+  "celular": "44 91234-1234"
+}
+
+###
+
+POST https://crud-backend-react.onrender.com/usuarios
+Content-type: application/json
+
+{
+  "nome": "Maria Freitas",
+  "email": "mariafreitas@gmail.com",
+  "celular": "44 94321-4321"
+}
+
+###
+
+GET https://crud-backend-react.onrender.com/usuarios
+
+###
+
+GET https://crud-backend-react.onrender.com/usuarios?nome=joão
+
+###
+
+PUT https://crud-backend-react.onrender.com/usuarios/b8093df3-d630-429c-acb4-36b6ee74c560
+Content-type: application/json
+Accept-Language: pt
+
+{
+  "nome": "João da Silva",
+  "email": "joaodasilva2@gmail.com",
+  "celular": "44 91234-1234"
+}
+
+###
+
+DELETE https://crud-backend-react.onrender.com/usuarios/323
